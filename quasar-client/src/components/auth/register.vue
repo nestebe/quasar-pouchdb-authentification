@@ -55,7 +55,7 @@
 </template>
 
 <script>
-
+import auth from '../../auth';
   export default {
     data() {
       return {
@@ -73,7 +73,7 @@
           email: this.credentials.email,
           password: this.credentials.password
         }
-        //  auth.signup(this, credentials, 'jokes')
+        auth.signup(this, credentials, 'login')
       }
     }
   }
