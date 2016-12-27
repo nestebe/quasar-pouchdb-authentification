@@ -29,6 +29,7 @@ export default new VueRouter({
       ]
     },
     //{ path: '*', component: load('Error404') }, // Not found
-	 { path: '/login', component: load('Login') } // Not found
+	 { name:'login', path: '/auth/login', component: load('auth/login') },
+	 { name:'register', path: '/auth/register', component: load('auth/register') }
   ]
 })

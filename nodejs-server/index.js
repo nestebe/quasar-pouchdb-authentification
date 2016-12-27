@@ -2,13 +2,24 @@ var express = require('express');
 var app = express();
 var unirest = require('unirest');
 
+var bodyParser = require('body-parser')
+app.use( bodyParser.json() );     
+app.use(bodyParser.urlencoded({     
+  extended: true
+})); 
 
 app.get('/', function(req, res){
   res.send('hello world');
 });
+app.post('/create', function(req, res){
+	
+	var name = req.body.name;
+	console.log(name);
+	res.send(name);
+	
+});
 
-
-app.get('/create', function(req, res){
+app.post('/create', function(req, res){
 
 var req = unirest("PUT", "http://admin:admin@localhost:15984/_users/org.couchdb.user:test");
 

@@ -1,76 +1,67 @@
 <template>
-  <q-layout>
-    <div slot="header" class="toolbar">
-      <button class="hide-on-drawer-visible" @click="$refs.leftDrawer.open()">
-        <i>menu</i>
+  <div class="layout-view layout-padding">
+    <div class="branding">
+      <div class="splash"></div>
+      <div class="tagline">Quasar Starter</div>
+      <hr>
+      <p>Quasar App with PouchDB</p>
+    </div>
+    <div class="row no-gutter">
+      <button class="primary full-width" v-link="{name: 'login'}">
+        Login
       </button>
-      <q-toolbar-title :padding="1">
-        Quasar Layout
-      </q-toolbar-title>
-      <button @click="$refs.rightDrawer.open()">
-        <i>assignment</i>
+    </div>
+    <br>
+    <div class="row no-gutter">
+      <button class="primary full-width" v-link="{name: 'register'}">
+        Register
       </button>
     </div>
-
-    <div slot="header" class="toolbar">
-      <q-search :model.sync="search" ></q-search>
-    </div>
-
-
-
-    <q-drawer ref="leftDrawer">
-      <div class="toolbar light">
-        <q-toolbar-title :padding="1">
-            Menu
-        </q-toolbar-title>
-      </div>
-
-      <div class="list no-border platform-delimiter">
-        <q-drawer-link icon="view_quilt" to="connexion">
-         Connexion
-        </q-drawer-link>
-        <hr>
-        <div class="list-label">Layout Components</div>
-        <q-drawer-link icon="sign" to="inscription">
-         Inscription
-        </q-drawer-link>
-        <q-drawer-link icon="tab" to="/showcase/layout/tabs">
-          Tabs
-        </q-drawer-link>
-        <q-drawer-link icon="compare_arrows" to="/showcase/layout/drawer">
-          Layout Drawer
-        </q-drawer-link>
-      </div>
-    </q-drawer>
-
-    <router-view class="layout-view"></router-view>
-
-    <q-drawer right-side swipe-only ref="rightDrawer">
-      <div class="toolbar light">
-        <q-toolbar-title :padding="1">
-            Right-side Drawer
-        </q-toolbar-title>
-      </div>
-
-      <p style="padding: 25px;" class="text-grey-7">
-        This is yet another Drawer that does not gets displayed alongside content on
-        bigger screens.
-      </p>
-    </q-drawer>
-
-
-      <q-toolbar-title :padding="0" class="within-iframe-only">
-        Footer
-      </q-toolbar-title>
-    </div>
-  </q-layout>
+  </div>
 </template>
+
+<style lang="stylus">
+  @import "../themes/app.variables.styl"
+  @media only screen and (min-width: 601px){
+    .layout-padding{
+      margin 0 auto
+    }
+  }
+  .splash {
+    background url(../statics/quasar-logo.png) no-repeat center center
+    margin 0 auto
+    height 300px
+    width 300px
+  }
+  .branding {
+    width 80%
+    margin 0 auto
+    text-align center
+    max-width 350px
+    padding-bottom 10px
+  }
+  .branding .tagline {
+    color $primary
+    font-size 35px
+    line-height 30px
+  }
+  .branding p {
+    color $primary
+    font-size 18px
+  }
+  .branding hr {
+    max-width 50px
+    border-color $primary
+    border-width 2px
+    border-style solid
+    margin 30px auto
+  }
+</style>
 
 <script>
 export default {
   data () {
     return {
-      search: ''
     }
   }
 }
