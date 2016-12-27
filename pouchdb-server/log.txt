@@ -1,0 +1,46 @@
+[Tue, 27 Dec 2016 10:01:35 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:15984/
+[Tue, 27 Dec 2016 10:01:35 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:15984/_utils for the Fauxton UI.
+[Tue, 27 Dec 2016 10:01:42 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils 301
+[Tue, 27 Dec 2016 10:01:42 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 200
+[Tue, 27 Dec 2016 10:01:42 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/css/index-6688cd4426ead40b085270f8cb007530.css 200
+[Tue, 27 Dec 2016 10:01:42 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/js/require-34a7e370ea98389d118cc328682c0939.js 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/js/zeroclipboard/ZeroClipboard.swf?noCache=1482832903000 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/fonts/fauxtonicon.woff 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/fonts/fontawesome-webfont.woff?v=3.2.1 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/img/pouchdb-site.png 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1482832902807 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator 200
+[Tue, 27 Dec 2016 10:01:43 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users 200
+[Tue, 27 Dec 2016 10:01:44 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_membership 200
+[Tue, 27 Dec 2016 10:01:44 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_membership 304
+[Tue, 27 Dec 2016 10:01:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - PUT /_node/node1@127.0.0.1/_config/admins/admin 200
+[Tue, 27 Dec 2016 10:01:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /_session 200
+[Tue, 27 Dec 2016 10:01:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Tue, 27 Dec 2016 10:01:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1482832902808 200
+[Tue, 27 Dec 2016 10:01:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator 304
+[Tue, 27 Dec 2016 10:01:48 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users 304
+[Tue, 27 Dec 2016 10:01:51 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_membership 304
+[Tue, 27 Dec 2016 10:01:51 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_node/node1@127.0.0.1/_config 200
+[Tue, 27 Dec 2016 10:01:52 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_node/node1@127.0.0.1/_config/cors 200
+[Tue, 27 Dec 2016 10:01:52 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_node/node1@127.0.0.1/_config/httpd 200
+[Tue, 27 Dec 2016 10:01:56 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_node/node1@127.0.0.1/_config 304
+[Tue, 27 Dec 2016 10:04:32 GMT] [info] [<0.000.0>] pouchdb-server has started on http://127.0.0.1:15984/
+[Tue, 27 Dec 2016 10:04:32 GMT] [info] [<0.000.0>] navigate to http://127.0.0.1:15984/_utils for the Fauxton UI.
+[Tue, 27 Dec 2016 10:04:40 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/ 304
+[Tue, 27 Dec 2016 10:04:40 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/css/index-6688cd4426ead40b085270f8cb007530.css 304
+[Tue, 27 Dec 2016 10:04:40 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/js/require-34a7e370ea98389d118cc328682c0939.js 304
+[Tue, 27 Dec 2016 10:04:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/js/zeroclipboard/ZeroClipboard.swf?noCache=1482833081030 200
+[Tue, 27 Dec 2016 10:04:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET / 304
+[Tue, 27 Dec 2016 10:04:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Tue, 27 Dec 2016 10:04:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_utils/img/pouchdb-site.png 304
+[Tue, 27 Dec 2016 10:04:41 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Tue, 27 Dec 2016 10:04:44 GMT] [info] [<0.000.0>] 127.0.0.1 - - POST /_session 200
+[Tue, 27 Dec 2016 10:04:44 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_session 200
+[Tue, 27 Dec 2016 10:04:45 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_all_dbs?_=1482833080878 200
+[Tue, 27 Dec 2016 10:04:45 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_replicator 200
+[Tue, 27 Dec 2016 10:04:45 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_users 200
+[Tue, 27 Dec 2016 10:09:45 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_membership 304
+[Tue, 27 Dec 2016 10:09:45 GMT] [info] [<0.000.0>] 127.0.0.1 - - GET /_node/node1@127.0.0.1/_config 200
