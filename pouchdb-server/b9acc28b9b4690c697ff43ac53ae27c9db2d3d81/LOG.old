@@ -1,1 +1,5 @@
-2016/12/27-17:17:21.930 a3c Delete type=3 #1
+2016/12/27-17:19:40.958 2e6c Recovering log #3
+2016/12/27-17:19:40.958 2e6c Level-0 table #5: started
+2016/12/27-17:19:40.976 2e6c Level-0 table #5: 237 bytes OK
+2016/12/27-17:19:41.003 2e6c Delete type=0 #3
+2016/12/27-17:19:41.004 2e6c Delete type=3 #2

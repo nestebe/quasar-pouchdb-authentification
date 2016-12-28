@@ -36,6 +36,7 @@
               <input v-model="credentials.password" type="password" required placeholder="Your password" class="full-width">
               <label>Password</label>
             </div>
+           
           </div>
         </div>
         <hr>
@@ -71,7 +72,8 @@ import auth from '../../auth';
         var credentials = {
           name: this.credentials.name,
           email: this.credentials.email,
-          password: this.credentials.password
+          password: this.credentials.password,
+          password2: this.credentials.password2,
         }
         auth.signup(this, credentials, 'login')
       }

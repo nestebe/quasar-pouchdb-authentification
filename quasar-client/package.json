@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "babel-runtime": "^6.0.0",
+    "crypto-js": "^3.1.9-1",
     "fastclick": "^1.0.6",
     "material-design-icons": "^3.0.1",
     "moment": "^2.15.0",
@@ -20,7 +21,8 @@
     "roboto-fontface": "^0.6.0",
     "velocity-animate": "^1.2.3",
     "vue": "^2.1.6",
-    "vue-router": "^2.0.0"
+    "vue-router": "^2.0.0",
+    "vuelidate": "^0.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",

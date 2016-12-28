@@ -21,7 +21,7 @@
 </template>
 
 <style lang="stylus">
-  @import "../themes/app.variables.styl"
+  @import "../themes/app.variables.styl";
   @media only screen and (min-width: 601px){
     .layout-padding{
       margin 0 auto

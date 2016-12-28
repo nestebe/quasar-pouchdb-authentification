@@ -36,7 +36,7 @@
 </template>
 
 <script>
-  //import auth from '../../auth'
+  import auth from '../../auth'
   export default {
     data () {
       return {
@@ -52,7 +52,7 @@
           email: this.credentials.email,
           password: this.credentials.password
         }
-       // auth.login(this, credentials, 'jokes')
+        auth.login(this, credentials, 'index')
       }
     }
   }

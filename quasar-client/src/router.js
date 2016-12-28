@@ -22,7 +22,7 @@ export default new VueRouter({
 
   routes: [
     {
-      path: '/', component: load('Index'),
+      name:'dashboard', path: '/', component: load('dashboard'),
       children: [
         { path: 'connexion', component: load('Connexion') },
         { path: 'inscription', component: load('Inscription') },
