@@ -37,6 +37,7 @@
 
 <script>
   import auth from '../../auth'
+
   export default {
     data () {
       return {
@@ -52,8 +53,9 @@
           email: this.credentials.email,
           password: this.credentials.password
         }
-        auth.login(this, credentials, 'index')
+        auth.login(this, credentials, 'layout')
       }
-    }
+    },
+    created(){console.log("ready");}
   }
 </script>

@@ -1,70 +1,52 @@
 import Vue from 'vue'
 import Router from './router'
 import { Toast, LocalStorage } from 'quasar'
-var PouchDB = require('pouchdb');
-PouchDB.plugin(require('pouchdb-authentication'));
-var CryptoJS = require("crypto-js");
+
+//API
 const API_URL = 'http://localhost:3000/'
 const LOGIN_URL = API_URL + 'authenticate'
 const SIGNUP_URL = API_URL + 'signup'
 const USER_URL = API_URL + 'authenticate/user'
+//COUCHDB
+const DB_BASE = 'localhost:15984'
+var PouchDB = require('pouchdb');
+var CryptoJS = require("crypto-js");
+
 
 export default {
 
     user: {
         authenticated: false,
         login: '',
-        password: ''
+        password: '',
+        remotedb: ''
     },
+
     login(context, creds, redirect) {
+        LocalStorage.clear();
         var hash = CryptoJS.SHA1(creds.email);
-        console.log("hash: " + hash);
-        var url = 'http://' + creds.email + ':' + creds.password + '@localhost:15984/' + hash.toString();
+        console.log(hash);
+        var url = 'http://' + encodeURIComponent(creds.email) + ':' + creds.password + '@' + DB_BASE + '/' + hash.toString();
         console.log(url);
         var db = new PouchDB(url, { skip_setup: true });
 
         this.user.authenticated = true;
         this.user.login = creds.email;
         this.user.password = creds.password;
-
+        this.user.remotedb = url;
         var saveUser = this.user;
+
         db.info().then(function (result) {
-            // handle result
-            console.log("result: ", result);
-            console.log(saveUser);
-          //  Toast.create.positive("Success !");
+
+
             LocalStorage.set('user', saveUser);
             var r = LocalStorage.get.item('user');
-            Router.replace(redirect);
+            console.log("connexion success !");
+            Router.replace("/layout");
         }).catch(function (err) {
             console.log(err);
-            Toast.create.negative("Error !");
+            Toast.create.negative("Login Error !");
         });
-
-
-        /*   db.allDocs({
-               include_docs: true,
-               attachments: true
-           }).then(function (result) {
-               // handle result
-               console.log(result.rows);
-           }).catch(function (err) {
-               console.log(err);
-           });/*
-   
-           /*      context.$http.post(LOGIN_URL, creds).then((response) => {
-                     LocalStorage.set('id_token', response.json().token)
-         
-                     this.user.authenticated = true
-                     Vue.http.headers.common['Authorization'] = 'Bearer ' + LocalStorage.get.item('id_token')
-                     this.getAuthUser(context)
-         
-                     if (redirect) {
-                         Router.replace(redirect)
-                     }
-                 }, (response) => {
-                     Toast.create.negative(response.json().error)
-                 })*/
     },
 
     signup(context, creds, redirect) {
@@ -82,48 +64,31 @@ export default {
             console.log(response);
         })
 
-
-
-
-
-        /* context.$http.post(SIGNUP_URL, creds).then((response) => {
-           LocalStorage.set('id_token', response.json().token)
-     
-           this.user.authenticated = true
-           Vue.http.headers.common['Authorization'] = 'Bearer ' + LocalStorage.get.item('id_token')
-           this.getAuthUser(context)
-     
-           if (redirect) {
-             Router.replace(redirect)
-           }
-         }, (response) => {
-           Toast.create.negative(response.json().error)
-         })*/
     },
 
     logout() {
         LocalStorage.clear()
         this.user.authenticated = false
+        Router.replace("/");
     },
 
     checkAuth() {
-        var jwt = LocalStorage.get.item('id_token')
-
-        if (jwt) {
-            this.user.authenticated = true
-            Vue.http.headers.common['Authorization'] = 'Bearer ' + jwt
-        }
-        else {
-            this.user.authenticated = false
+        var userAuth = LocalStorage.get.item('user');
+        if (userAuth) {
+            if (userAuth.authenticated) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
         }
     },
 
-    getAuthUser(context) {
-        context.$http.get(USER_URL).then((response) => {
-            console.log(response.json())
-            LocalStorage.set('user', response.json())
-        }, (response) => {
-            Toast.create.negative('Something went wrong!')
-        })
+    getUser() {
+        var localUser = LocalStorage.get.item('user');
+        return localUser;
     }
+
+
 }

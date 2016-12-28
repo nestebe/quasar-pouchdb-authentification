@@ -20,6 +20,17 @@
   </div>
 </template>
 
+<script>
+  import { LocalStorage } from 'quasar';
+   
+  export default {
+    data() {
+      return {
+      }
+    }
+  }
+</script>
+
 <style lang="stylus">
   @import "../themes/app.variables.styl";
   @media only screen and (min-width: 601px){
@@ -58,11 +69,3 @@
   }
 </style>
 
-<script>
-export default {
-  data () {
-    return {
-    }
-  }
-}
-</script>

@@ -21,15 +21,24 @@ export default new VueRouter({
    */
 
   routes: [
-    {
-      name:'dashboard', path: '/', component: load('dashboard'),
-      children: [
-        { path: 'connexion', component: load('Connexion') },
-        { path: 'inscription', component: load('Inscription') },
-      ]
-    },
+
+
     //{ path: '*', component: load('Error404') }, // Not found
-	 { name:'login', path: '/auth/login', component: load('auth/login') },
-	 { name:'register', path: '/auth/register', component: load('auth/register') }
+    { name: 'index', path: '/', component: load('index') },
+    { name: 'login', path: '/auth/login', component: load('auth/login') },
+    { name: 'logout', path: '/auth/logout', component: load('auth/logout') },
+    { name: 'register', path: '/auth/register', component: load('auth/register') },
+
+    { name: 'error404', path: '/error404', component: load('error404') },
+    {
+      name: "layout",
+      path: '/layout',
+      component: load('layouts/layout'),
+      children: [
+        { path: '', component: load('layouts/about') },
+        { path: 'items', component: load('layouts/items') },
+        { path: 'syncdata', component: load('layouts/syncdata') }
+      ]
+    }
   ]
 })
