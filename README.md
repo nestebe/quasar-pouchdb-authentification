@@ -5,9 +5,9 @@ Sample authentification with quasar-framework (vuejs) and pouchdb-server
 
 ####Create couchdb server
 <i>cd pouchdb-server</i><br>
-<i>pouchdb-server -p 15984</i><br>
-Admin login: <i>admin</i> <p>
-Admin password: <i>admin</i> <p>
+<i>pouchdb-server -p 15984</i><br><br>
+Admin login: <i>admin</i> <br>
+Admin password: <i>admin</i> 
 
 ####Setup node server
 <i>cd nodejs-server</i><br>
