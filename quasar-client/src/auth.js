@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from './router'
-import { Toast, LocalStorage } from 'quasar'
+import { Toast, LocalStorage, Loading } from 'quasar'
 
 //API
 const API_URL = 'http://localhost:3000/'
@@ -23,11 +23,11 @@ export default {
     },
 
     login(context, creds, redirect) {
+        Loading.show();
         LocalStorage.clear();
+        //generate database name (hash) with email
         var hash = CryptoJS.SHA1(creds.email);
-        console.log(hash);
         var url = 'http://' + encodeURIComponent(creds.email) + ':' + creds.password + '@' + DB_BASE + '/' + hash.toString();
-        console.log(url);
         var db = new PouchDB(url, { skip_setup: true });
 
         this.user.authenticated = true;
@@ -37,22 +37,20 @@ export default {
         var saveUser = this.user;
 
         db.info().then(function (result) {
-
-
             LocalStorage.set('user', saveUser);
             var r = LocalStorage.get.item('user');
             console.log("connexion success !");
+            Loading.hide();
             Router.replace("/layout");
         }).catch(function (err) {
             console.log(err);
+            Loading.hide();
             Toast.create.negative("Login Error !");
         });
     },
 
     signup(context, creds, redirect) {
         console.log(SIGNUP_URL);
-
-
         context.$http.post(SIGNUP_URL, creds).then((response) => {
 
             if (redirect) {
@@ -63,7 +61,6 @@ export default {
             }
             console.log(response);
         })
-
     },
 
     logout() {

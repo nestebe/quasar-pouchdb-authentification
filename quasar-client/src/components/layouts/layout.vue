@@ -5,7 +5,7 @@
         <i>menu</i>
       </button>
             <q-toolbar-title :padding="1">
-                Quasar Layout
+                Sample PouchDB App
             </q-toolbar-title>
             <button @click="$refs.rightDrawer.open()">
         <i>assignment</i>
@@ -34,7 +34,7 @@
                 <q-drawer-link icon="build" to="/layout/items">
                     Items
                 </q-drawer-link>
-                  <q-drawer-link icon="build" to="/layout/syncdata">
+                <q-drawer-link icon="build" to="/layout/syncdata">
                     Add Item
                 </q-drawer-link>
                 <q-drawer-link icon="mail" to="/auth/logout">Logout</q-drawer-link>
@@ -53,9 +53,8 @@
             <p style="padding: 25px;" class="text-grey-7"> This is yet another Drawer that does not gets displayed alongside content on bigger screens.
 </p>
 </q-drawer>
-
-
 </q-layout>
+
 </template>
 
 <script>
@@ -63,50 +62,38 @@
     import auth from '../../auth'
     var PouchDB = require('pouchdb');
 
-
-
-
-
- 
-
     export default {
         data() {
             return {
-                search: 'toto'
+                search: ''
             }
         },
-
         created() {
-
-   new PouchDB('localDB').destroy().then(function () {
-  console.log("clean all");
-          var remotedb = auth.getUser().remotedb;
+            var remotedb = auth.getUser().remotedb;
             var db = new PouchDB('localDB');
             var sync = PouchDB.sync('localDB', remotedb, {
+                //options
                 live: true,
                 retry: true
             }).on('change', function (info) {
-                // handle change
-                console.log('change');
+                console.log('database: change');
             }).on('paused', function (err) {
-                console.log('paused');
-
+                console.log('database: paused');
             }).on('active', function () {
-                console.log('active');
+                console.log('database: active');
             }).on('denied', function (err) {
-                console.log('denied');
+                console.log('database: denied');
             }).on('complete', function (info) {
-                console.log('complete');
+                console.log('database: complete');
             }).on('error', function (err) {
-                console.log('error');
+                console.log('database: error');
             });
-}).catch(function (err) {
-  // error occurred
-})
-
         },
-        destroyed(){
-          console.log("DESTROYED layout");
+        destroyed() {
+            console.log("DESTROYED layout");
+            new PouchDB('localDB').destroy().then(function () {
+                console.log("destroy localDB");
+            });
         }
     }
 </script>

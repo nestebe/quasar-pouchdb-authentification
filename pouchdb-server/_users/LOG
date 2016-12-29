@@ -1,5 +1,5 @@
-2016/12/28-17:54:15.230 1fe4 Recovering log #26
-2016/12/28-17:54:15.230 1fe4 Level-0 table #29: started
-2016/12/28-17:54:15.238 1fe4 Level-0 table #29: 5402 bytes OK
-2016/12/28-17:54:15.258 1fe4 Delete type=0 #26
-2016/12/28-17:54:15.259 1fe4 Delete type=3 #24
+2016/12/29-09:25:32.352 1fe0 Recovering log #30
+2016/12/29-09:25:32.367 1fe0 Level-0 table #32: started
+2016/12/29-09:25:32.383 1fe0 Level-0 table #32: 334 bytes OK
+2016/12/29-09:25:32.414 1fe0 Delete type=0 #30
+2016/12/29-09:25:32.414 1fe0 Delete type=3 #28
