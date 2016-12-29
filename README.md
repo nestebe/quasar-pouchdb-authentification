@@ -9,7 +9,7 @@ Sample authentification with quasar-framework (vuejs) and pouchdb-server
 <i>pouchdb-server -p 15984</i><br><br>
 go to:  http://127.0.0.1:15984/_utils<br>
 <br>
-create admin party: <br>
+create admin party with: <br>
 Admin login: <i>admin</i> <br>
 Admin password: <i>admin</i> 
 
