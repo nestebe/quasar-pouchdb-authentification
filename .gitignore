@@ -1,2 +1,2 @@
-.DS_Store
-pouchdb-server/
+/pouchdb-server
+/nodejs-server/node_modules
