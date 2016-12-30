@@ -1,2 +1,12 @@
 /pouchdb-server
 /nodejs-server/node_modules
+/quasar-client/node_modules/
+/quasar-client/dist/
+/quasar-client/npm-debug.log
+/quasar-client/npm-debug.log.*
+/quasar-client/selenium-debug.log
+/quasar-client/test/unit/coverage
+/quasar-client/test/e2e/reports
+/quasar-client/cordova/platforms
+/quasar-client/cordova/plugins
+/quasar-client/thumbs.db
