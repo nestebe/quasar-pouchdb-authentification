@@ -4,7 +4,8 @@ Sample authentification with quasar-framework (vuejs) and pouchdb-server
 # Installation
 
 ####Create couchdb server
- <i>npm install -g pouchdb-server</i><br>
+<i>npm install -g pouchdb-server</i><br>
+create pouchdb-server folder
 <i>cd pouchdb-server</i><br>
 <i>pouchdb-server -p 15984</i><br><br>
 go to:  http://127.0.0.1:15984/_utils<br>
