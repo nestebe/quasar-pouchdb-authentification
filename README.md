@@ -4,7 +4,11 @@ Sample authentification with quasar-framework (vuejs) and pouchdb-server
 # Installation
 
 ####Create couchdb server
-<i>npm install -g pouchdb-server</i><br>
+```bash
+npm install -g pouchdb-server
+
+#create pouchdb-server folder
+```
 create pouchdb-server folder<br>
 <i>cd pouchdb-server</i><br>
 <i>pouchdb-server -p 15984</i><br><br>
